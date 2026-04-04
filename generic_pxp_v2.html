@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Project — Execution Plan Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f0d;
+    --surface: #111a15;
+    --surface2: #172010;
+    --border: #1e2e22;
+    --accent: #3ddc6e;
+    --accent2: #7fffa8;
+    --accent-dim: rgba(61,220,110,0.12);
+    --text: #d4e8da;
+    --text-muted: #6b8f74;
+    --text-dim: #3a5240;
+    --danger: #e05c3a;
+    --warn: #e0a93a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(61,220,110,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,220,110,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+  .shell { position: relative; z-index: 1; display: flex; min-height: 100vh; }
+  .sidebar { width: 260px; min-width: 260px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .logo-block { padding: 28px 24px 20px; border-bottom: 1px solid var(--border); }
+  .logo-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+  .logo-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: #fff; line-height: 1; }
+  .logo-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; }
+  .nav { padding: 16px 0; flex: 1; }
+  .nav-section-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; color: var(--text-dim); text-transform: uppercase; padding: 14px 24px 6px; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 24px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all 0.15s; border-left: 2px solid transparent; font-weight: 400; }
+  .nav-item:hover { color: var(--text); background: var(--accent-dim); border-left-color: var(--accent); }
+  .nav-item.active { color: var(--accent); background: var(--accent-dim); border-left-color: var(--accent); font-weight: 500; }
+  .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; }
+  .nav-item.active .nav-dot { opacity: 1; }
+  .main { flex: 1; overflow-y: auto; padding: 40px 48px; max-width: 960px; }
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .section-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; color: #fff; line-height: 1; }
+  .section-desc { margin-top: 10px; font-size: 14px; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1.5px; color: var(--accent2); margin-bottom: 10px; }
+  .card p { font-size: 13.5px; line-height: 1.75; color: var(--text); opacity: 0.85; margin-bottom: 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  .flow { display: flex; align-items: center; margin: 28px 0; flex-wrap: wrap; gap: 8px; }
+  .flow-step { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px 20px; text-align: center; flex: 1; min-width: 100px; }
+  .flow-step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 1px; margin-bottom: 4px; }
+  .flow-step-label { font-size: 13px; font-weight: 600; color: #fff; }
+  .flow-step-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .flow-arrow { color: var(--accent); font-size: 18px; flex-shrink: 0; }
+  .revenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .revenue-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 18px; }
+  .revenue-card-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+  .revenue-card-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+  .revenue-card p { font-size: 12.5px; color: var(--text-muted); line-height: 1.65; }
+  .alert { background: rgba(224,92,58,0.08); border: 1px solid rgba(224,92,58,0.25); border-radius: 6px; padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--text); line-height: 1.7; }
+  .alert-warn { background: rgba(224,169,58,0.08); border-color: rgba(224,169,58,0.25); }
+  .alert strong { color: var(--danger); }
+  .alert-warn strong { color: var(--warn); }
+  h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin: 28px 0 14px; }
+  .phase-list { display: flex; flex-direction: column; gap: 0; }
+  .phase-item { display: flex; gap: 20px; }
+  .phase-line-col { display: flex; flex-direction: column; align-items: center; width: 32px; flex-shrink: 0; }
+  .phase-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--surface2); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 500; flex-shrink: 0; }
+  .phase-connector { width: 1px; background: var(--border); flex: 1; min-height: 20px; margin: 4px 0; }
+  .phase-content { padding-bottom: 32px; flex: 1; padding-top: 4px; }
+  .phase-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 12px; }
+  .phase-tasks { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .phase-tasks li { font-size: 13px; color: var(--text-muted); line-height: 1.6; padding-left: 16px; position: relative; }
+  .phase-tasks li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 11px; }
+  .equip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .equip-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 18px; }
+  .equip-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; }
+  .equip-card-title { font-size: 14px; font-weight: 600; color: var(--accent2); margin-bottom: 8px; }
+  .equip-card p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+  .risk-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .risk-table th { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .risk-table td { padding: 12px 14px; border-bottom: 1px solid rgba(30,46,34,0.5); color: var(--text-muted); vertical-align: top; line-height: 1.55; }
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 3px; letter-spacing: 1px; text-transform: uppercase; }
+  .risk-high { background: rgba(224,92,58,0.15); color: var(--danger); border: 1px solid rgba(224,92,58,0.3); }
+  .risk-med { background: rgba(224,169,58,0.12); color: var(--warn); border: 1px solid rgba(224,169,58,0.3); }
+  .risk-low { background: rgba(61,220,110,0.1); color: var(--accent); border: 1px solid rgba(61,220,110,0.25); }
+  .cost-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 18px; margin-bottom: 12px; }
+  .cost-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid rgba(30,46,34,0.5); font-size: 13px; }
+  .cost-row:last-child { border-bottom: none; }
+  .cost-label { color: var(--text-muted); }
+  .cost-val { font-family: 'DM Mono', monospace; color: var(--accent2); font-size: 12px; }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hamburger-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .hamburger-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hamburger-btn span { display: block; width: 18px; height: 2px; background: var(--accent); border-radius: 1px; }
+  .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 98; }
+  .nav-overlay.open { display: block; }
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .sidebar { position: fixed; top: 0; left: -280px; z-index: 99; height: 100vh; transition: left 0.25s ease; }
+    .sidebar.open { left: 0; }
+    .main { padding: 72px 20px 32px; margin-left: 0; }
+    .section-title { font-size: 32px; }
+    .revenue-grid { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; align-items: stretch; }
+    .flow-arrow { transform: rotate(90deg); text-align: center; }
+    .risk-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .cost-row { flex-direction: column; gap: 2px; }
+    .cost-val { font-size: 11px; }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="overlay" onclick="closeNav()"></div>
+  <!-- Mobile hamburger bar -->
+  <div class="hamburger">
+    <span class="hamburger-title">PROJECT REFERENCE</span>
+    <button class="hamburger-btn" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block">
+      <div class="logo-eyebrow">Project Reference</div>
+      <div class="logo-title">Capital Project Execution Plan</div>
+      <div class="logo-sub">Industrial Infrastructure — General Framework</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section-label">Sections</div>
+      <div class="nav-item active" onclick="show('overview')"><div class="nav-dot"></div>01 — Project Overview</div>
+      <div class="nav-item" onclick="show('phases')"><div class="nav-dot"></div>02 — Project Phases</div>
+      <div class="nav-item" onclick="show('procurement')"><div class="nav-dot"></div>03 — Procurement</div>
+      <div class="nav-item" onclick="show('controls')"><div class="nav-dot"></div>04 — Project Controls</div>
+      <div class="nav-item" onclick="show('risk')"><div class="nav-dot"></div>05 — Risk Register</div>
+      <div class="nav-item" onclick="show('stakeholders')"><div class="nav-dot"></div>06 — Stakeholders</div>
+    </nav>
+  </aside>
+
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <div id="overview" class="section active">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 01 — Overview</div>
+        <div class="section-title">Project Overview</div>
+        <div class="section-desc">Foundational context, objectives, and success criteria for a capital infrastructure project from sanction through commissioning.</div>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step"><div class="flow-step-num">01</div><div class="flow-step-label">Develop</div><div class="flow-step-sub">Define & sanction</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-num">02</div><div class="flow-step-label">Engineer</div><div class="flow-step-sub">Detail design</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-num">03</div><div class="flow-step-label">Procure</div><div class="flow-step-sub">Buy & expedite</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-num">04</div><div class="flow-step-label">Construct</div><div class="flow-step-sub">Build & inspect</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-num">05</div><div class="flow-step-label">Commission</div><div class="flow-step-sub">Test & hand over</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Project Purpose</div>
+        <p>This template establishes the execution framework for a capital infrastructure project. It covers the full lifecycle from early development through operations handover, providing a consistent reference for project team members, contractors, and stakeholders across disciplines.</p>
+        <p>Each section addresses a distinct execution domain — phases, procurement, controls, risk, and stakeholder management — with enough specificity to drive alignment without being prescriptive about project-specific details that belong in dedicated work plans.</p>
+      </div>
+
+      <h3>Project Objectives</h3>
+      <div class="revenue-grid">
+        <div class="revenue-card">
+          <div class="revenue-card-label">Primary</div>
+          <div class="revenue-card-title">On-Time Delivery</div>
+          <p>Achieve mechanical completion and commissioning within the approved project schedule, meeting all contractual milestones and avoiding liquidated damages exposure.</p>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-card-label">Primary</div>
+          <div class="revenue-card-title">Within Approved Budget</div>
+          <p>Complete the project within sanctioned capital, with committed cost tracking, change order discipline, and contingency management throughout execution.</p>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-card-label">Primary</div>
+          <div class="revenue-card-title">Scope Integrity</div>
+          <p>Deliver all contracted scope to specification. Changes to scope must follow the formal change management process with impact assessment before approval.</p>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-card-label">Primary</div>
+          <div class="revenue-card-title">Safety & Quality</div>
+          <p>Zero recordable safety incidents. All work performed to applicable codes, standards, and project specifications with documented QA/QC records.</p>
+        </div>
+      </div>
+
+      <h3>Key Metrics & Reporting</h3>
+      <div class="cost-block">
+        <div class="cost-row"><span class="cost-label">Schedule Performance Index (SPI)</span><span class="cost-val">Target ≥ 1.0</span></div>
+        <div class="cost-row"><span class="cost-label">Cost Performance Index (CPI)</span><span class="cost-val">Target ≥ 1.0</span></div>
+        <div class="cost-row"><span class="cost-label">Committed Cost vs. Budget</span><span class="cost-val">Monthly reporting</span></div>
+        <div class="cost-row"><span class="cost-label">Open Action Items</span><span class="cost-val">Weekly tracking</span></div>
+        <div class="cost-row"><span class="cost-label">Long Lead Equipment Status</span><span class="cost-val">Bi-weekly expediting</span></div>
+        <div class="cost-row"><span class="cost-label">Safety — TRIR</span><span class="cost-val">Monthly reporting</span></div>
+      </div>
+
+      <div class="alert alert-warn">
+        <strong>Schedule drives everything.</strong> In capital projects, cost overruns are often a consequence of schedule slippage — extended supervision, equipment storage, contractor remobilization, and delay claims. The most important thing a PM can protect is the critical path.
+      </div>
+    </div>
+
+    <!-- PHASES -->
+    <div id="phases" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 02 — Execution</div>
+        <div class="section-title">Project Phases</div>
+        <div class="section-desc">End-to-end project lifecycle for a capital infrastructure project from development sanction through operations handover.</div>
+      </div>
+      <div class="phase-list">
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">1</div><div class="phase-connector"></div></div>
+          <div class="phase-content">
+            <div class="phase-title">Development & Sanction</div>
+            <ul class="phase-tasks">
+              <li>Define project scope, objectives, and success criteria; align with sponsor and stakeholders</li>
+              <li>Complete FEED (Front End Engineering & Design) — PFDs, P&IDs, equipment sizing, ±15% cost estimate</li>
+              <li>Obtain all required permits, land rights, and regulatory approvals</li>
+              <li>Develop project execution plan (PXP), contracting strategy, and procurement plan</li>
+              <li>Secure financing or capital approval; establish project controls baseline</li>
+              <li>Issue Limited Notice to Proceed (LNTP) on long lead equipment immediately after sanction</li>
+              <li>Execute Master Service Agreements with key contractors and vendors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">2</div><div class="phase-connector"></div></div>
+          <div class="phase-content">
+            <div class="phase-title">Detailed Engineering</div>
+            <ul class="phase-tasks">
+              <li>Complete detailed design across all disciplines — mechanical, civil, structural, electrical, instrumentation</li>
+              <li>Issue Issued for Construction (IFC) drawings and specifications to contractors</li>
+              <li>Finalize equipment datasheets and purchase specifications</li>
+              <li>Conduct HAZOP, SIL review, and safety instrumented system (SIS) design</li>
+              <li>Develop construction work packages and sequences</li>
+              <li>Complete constructability reviews with construction contractor</li>
+              <li>Finalize material take-offs and confirm procurement quantities</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">3</div><div class="phase-connector"></div></div>
+          <div class="phase-content">
+            <div class="phase-title">Procurement</div>
+            <ul class="phase-tasks">
+              <li>Issue purchase orders for all long lead equipment — track against delivery commitments weekly</li>
+              <li>Conduct technical bid evaluations; award contracts to qualified vendors</li>
+              <li>Conduct Factory Acceptance Testing (FAT) on critical equipment before shipment</li>
+              <li>Manage logistics — shipping, customs, receiving, inspection, storage</li>
+              <li>Expedite all items on critical path; identify and mitigate delivery risks proactively</li>
+              <li>Maintain material tracking log — PO status, expected delivery, actual delivery, location</li>
+              <li>Manage vendor documentation — data books, as-built drawings, O&M manuals</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">4</div><div class="phase-connector"></div></div>
+          <div class="phase-content">
+            <div class="phase-title">Construction</div>
+            <ul class="phase-tasks">
+              <li>Mobilize construction contractor; establish site safety plan and emergency response procedures</li>
+              <li>Execute civil earthwork, foundations, structural steel, equipment setting</li>
+              <li>Complete piping fabrication, installation, and NDE inspection</li>
+              <li>Complete electrical, instrumentation, and control system installation</li>
+              <li>Manage daily progress tracking, schedule updates, and weekly look-ahead planning</li>
+              <li>Issue RFIs and field change notices promptly; document all deviations from design</li>
+              <li>Conduct pre-commissioning punch list walks; close outstanding items before system handover</li>
+              <li>Coordinate tie-in outage windows with operations where applicable</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">5</div><div class="phase-connector"></div></div>
+          <div class="phase-content">
+            <div class="phase-title">Commissioning & Startup</div>
+            <ul class="phase-tasks">
+              <li>Instrument calibration across all measurement devices</li>
+              <li>Control system loop checks and functional logic testing</li>
+              <li>Safety system testing — ESD logic, pressure relief, fire and gas response</li>
+              <li>Mechanical run test of rotating equipment</li>
+              <li>System performance testing against design basis</li>
+              <li>Operator training and handover of O&M manuals and as-built drawings</li>
+              <li>Regulatory notifications and final permits where required</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-line-col"><div class="phase-dot">6</div></div>
+          <div class="phase-content">
+            <div class="phase-title">Closeout</div>
+            <ul class="phase-tasks">
+              <li>Finalize all punch list items and close outstanding RFIs and change orders</li>
+              <li>Compile and submit final as-built documentation package</li>
+              <li>Complete vendor warranty registrations and final invoicing</li>
+              <li>Conduct project lessons learned session with full team</li>
+              <li>Final cost reconciliation and budget closeout report</li>
+              <li>Formal handover to operations with signed mechanical completion certificate</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROCUREMENT -->
+    <div id="procurement" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 03 — Procurement</div>
+        <div class="section-title">Procurement Strategy</div>
+        <div class="section-desc">Equipment categories, lead times, and procurement priorities across a typical capital project portfolio.</div>
+      </div>
+
+      <div class="alert">
+        <strong>Long lead equipment governs the project schedule.</strong> The first procurement action after sanction should always be issuing LNTP or purchase orders for equipment with lead times exceeding 6 months. Delay here compresses every downstream phase.
+      </div>
+
+      <h3>Equipment Categories by Lead Time</h3>
+      <div class="equip-grid">
+        <div class="equip-card">
+          <div class="equip-card-label">12–24 months lead</div>
+          <div class="equip-card-title">Long Lead — Critical Path</div>
+          <p>Large rotating equipment (compressors, turbines, pumps), custom pressure vessels, heat exchangers, large transformers, switchgear, specialty valves. Order immediately after sanction. These govern the schedule.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">6–12 months lead</div>
+          <div class="equip-card-title">Medium Lead — Monitor Closely</div>
+          <p>Control systems (DCS/PLC), packaged skid equipment, electrical MCC and distribution panels, specialty instruments, structural steel, bulk line pipe. Order early in detailed engineering phase.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">4–8 weeks lead</div>
+          <div class="equip-card-title">Standard Bulk — Manage Quantities</div>
+          <p>Standard valves, pipe fittings, cable, conduit, instrumentation tubing, concrete and aggregate, fasteners. Manage through material take-offs and purchase early enough to avoid site delays.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Variable</div>
+          <div class="equip-card-title">Contractor-Furnished — Verify Early</div>
+          <p>Items furnished by the EPC or construction contractor. Confirm procurement status and delivery commitments in early contractor meetings — contractor supply chain problems become your schedule problems.</p>
+        </div>
+      </div>
+
+      <h3>Procurement Best Practices</h3>
+      <div class="card">
+        <div class="card-title">Bid Evaluation & Award</div>
+        <p>Use structured technical and commercial bid evaluations. Separate technical evaluation from commercial to avoid price anchoring. Require bidders to confirm delivery dates in writing — verbal commitments mean nothing.</p>
+        <p>Include lifecycle cost in major equipment evaluations, not just purchase price. A cheaper compressor with higher maintenance costs and longer downtime exposure may cost more over the project life.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Expediting & Delivery Management</div>
+        <p>Assign dedicated expediting coverage to all long lead items. Minimum monthly check-ins with vendors during manufacturing; weekly as delivery approaches. Visit the factory for critical equipment FAT.</p>
+        <p>Build delivery buffer into the project schedule for all critical equipment — assume at least one vendor will slip. The question is which one and by how much.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Documentation Requirements</div>
+        <p>Establish vendor documentation requirements at PO issuance. Final data books, as-built drawings, operating and maintenance manuals, spare parts lists, and warranty documentation must be received and reviewed before final payment. Don't close a PO without the complete documentation package.</p>
+      </div>
+    </div>
+
+    <!-- PROJECT CONTROLS -->
+    <div id="controls" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 04 — Controls</div>
+        <div class="section-title">Project Controls</div>
+        <div class="section-desc">Budget management, schedule control, change management, and reporting framework for capital project execution.</div>
+      </div>
+
+      <h3>Cost Tracking Framework</h3>
+      <div class="card">
+        <div class="card-title">Committed vs. Spent</div>
+        <p><strong style="color:var(--accent2)">Committed cost</strong> is the full value of a contract or purchase order from the moment it is executed — regardless of whether any work has been performed or invoiced. This is the number that matters for budget management. Once you sign the PO, the money is committed.</p>
+        <p><strong style="color:var(--accent2)">Spent cost (actuals)</strong> is what has been invoiced and paid to date. This lags committed cost, sometimes significantly. Never manage a project budget against actuals alone — you will not see overruns until it is too late to act.</p>
+        <p><strong style="color:var(--accent2)">Estimate to Complete (ETC)</strong> is the forecast of remaining cost to finish the work. Updated monthly or when scope changes. ETC + Actuals = Estimate at Completion (EAC). Compare EAC to budget to understand true project financial position.</p>
+      </div>
+
+      <h3>Change Management</h3>
+      <div class="card">
+        <div class="card-title">Change Order Discipline</div>
+        <p>Every change to scope, schedule, or budget must go through a formal change management process before work begins. Changes executed without approval become disputes later. Establish a change log from day one and review it in every project meeting.</p>
+        <p>Assess all changes for schedule impact, not just cost. A "zero cost" change that adds two weeks to the critical path is not a zero-cost change — the extended supervision, contractor overhead, and delay risk has a real dollar value.</p>
+      </div>
+
+      <h3>Schedule Management</h3>
+      <div class="cost-block">
+        <div class="cost-row"><span class="cost-label">Schedule Tool</span><span class="cost-val">Primavera P6 / MS Project</span></div>
+        <div class="cost-row"><span class="cost-label">Update Frequency</span><span class="cost-val">Weekly during construction</span></div>
+        <div class="cost-row"><span class="cost-label">Look-Ahead Planning</span><span class="cost-val">3-week rolling look-ahead</span></div>
+        <div class="cost-row"><span class="cost-label">Critical Path Review</span><span class="cost-val">Every project meeting</span></div>
+        <div class="cost-row"><span class="cost-label">Baseline Comparison</span><span class="cost-val">Monthly variance report</span></div>
+        <div class="cost-row"><span class="cost-label">Float Management</span><span class="cost-val">Flag when float &lt; 2 weeks</span></div>
+      </div>
+
+      <h3>Reporting Cadence</h3>
+      <div class="equip-grid">
+        <div class="equip-card">
+          <div class="equip-card-label">Weekly</div>
+          <div class="equip-card-title">Progress Report</div>
+          <p>Work completed vs. planned, open RFIs, safety incidents, upcoming milestones, top issues and action items.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Monthly</div>
+          <div class="equip-card-title">Executive Report</div>
+          <p>Cost and schedule performance (SPI/CPI), committed cost vs. budget, forecast at completion, contingency status, key risks.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">As Needed</div>
+          <div class="equip-card-title">Change Orders</div>
+          <p>Scope, cost, and schedule impact assessment. Required before any work outside original contract is authorized.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">At Closeout</div>
+          <div class="equip-card-title">Final Report</div>
+          <p>Final cost vs. budget, schedule vs. baseline, lessons learned, outstanding warranty items, operations handover checklist.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISK -->
+    <div id="risk" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 05 — Risk</div>
+        <div class="section-title">Risk Register</div>
+        <div class="section-desc">Common risk categories across capital infrastructure projects — likelihood, impact, and mitigation strategies.</div>
+      </div>
+
+      <div class="alert alert-warn">
+        <strong>Risk management is not a one-time exercise.</strong> The risk register should be reviewed and updated at every project meeting. Risks change as the project progresses — some close, new ones emerge.
+      </div>
+
+      <table class="risk-table">
+        <thead>
+          <tr><th>Risk</th><th>Category</th><th>Level</th><th>Mitigation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Long lead equipment delivery delay</td>
+            <td>Schedule</td>
+            <td><span class="risk-tag risk-high">High</span></td>
+            <td>Issue LNTP immediately post-sanction. Weekly expediting. Build schedule float on critical equipment.</td>
+          </tr>
+          <tr>
+            <td>Scope creep from engineering changes</td>
+            <td>Cost / Schedule</td>
+            <td><span class="risk-tag risk-high">High</span></td>
+            <td>Strict change management process. No work outside contract without approved change order.</td>
+          </tr>
+          <tr>
+            <td>Permit delays from regulatory agencies</td>
+            <td>Schedule</td>
+            <td><span class="risk-tag risk-high">High</span></td>
+            <td>File permits as early as possible. Maintain active dialogue with agencies. Build schedule buffer around permit milestones.</td>
+          </tr>
+          <tr>
+            <td>Contractor resource availability</td>
+            <td>Schedule</td>
+            <td><span class="risk-tag risk-med">Medium</span></td>
+            <td>Contract early with preferred contractors. Confirm resource commitments at kickoff. Monitor crew levels weekly.</td>
+          </tr>
+          <tr>
+            <td>Material cost escalation</td>
+            <td>Cost</td>
+            <td><span class="risk-tag risk-med">Medium</span></td>
+            <td>Lock in prices early via purchase orders. Include escalation provisions in contracts for long-duration work.</td>
+          </tr>
+          <tr>
+            <td>Unforeseen site conditions</td>
+            <td>Cost / Schedule</td>
+            <td><span class="risk-tag risk-med">Medium</span></td>
+            <td>Thorough site investigation in early development. Maintain contingency for discovery items.</td>
+          </tr>
+          <tr>
+            <td>Key person turnover on project team</td>
+            <td>Execution</td>
+            <td><span class="risk-tag risk-med">Medium</span></td>
+            <td>Document all decisions and rationale. Cross-train team members. Avoid single points of knowledge failure.</td>
+          </tr>
+          <tr>
+            <td>Weather / force majeure delays</td>
+            <td>Schedule</td>
+            <td><span class="risk-tag risk-low">Low</span></td>
+            <td>Build weather contingency into schedule. Include appropriate force majeure provisions in contracts.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- STAKEHOLDERS -->
+    <div id="stakeholders" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow">Section 06 — Stakeholders</div>
+        <div class="section-title">Stakeholder Management</div>
+        <div class="section-desc">Stakeholder map, communication plan, and engagement strategy across the project lifecycle.</div>
+      </div>
+
+      <h3>Internal Stakeholders</h3>
+      <div class="equip-grid">
+        <div class="equip-card">
+          <div class="equip-card-label">Sponsor / Owner</div>
+          <div class="equip-card-title">Executive Leadership</div>
+          <p>Provide capital approval, strategic direction, and final decision authority. Engage monthly via executive report. Escalate issues requiring decisions above PM authority promptly.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Technical</div>
+          <div class="equip-card-title">Engineering Team</div>
+          <p>Produce and own technical deliverables. Embedded in project from FEED through commissioning. Resolve technical queries from construction and vendors.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Finance</div>
+          <div class="equip-card-title">Finance & Accounting</div>
+          <p>Track committed and spent costs, process invoices, manage capital appropriations. Provide monthly cost reports. Coordinate with PM on change orders and budget adjustments.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Operations</div>
+          <div class="equip-card-title">Operations Team</div>
+          <p>End users of the completed facility. Engage throughout construction on operability and maintainability. Critical for coordinating tie-in outages and commissioning activities.</p>
+        </div>
+      </div>
+
+      <h3>External Stakeholders</h3>
+      <div class="equip-grid">
+        <div class="equip-card">
+          <div class="equip-card-label">Contractors</div>
+          <div class="equip-card-title">EPC / Construction</div>
+          <p>Execute engineering, procurement, and construction scope under contract. Weekly progress meetings. Manage through clear scope definition, performance metrics, and proactive issue resolution.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Vendors</div>
+          <div class="equip-card-title">Equipment Suppliers</div>
+          <p>Manufacture and deliver engineered equipment per PO terms. Manage through expediting, FAT attendance, and delivery milestone tracking. Hold vendors to documentation commitments.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Regulatory</div>
+          <div class="equip-card-title">Permitting Agencies</div>
+          <p>Issue permits and conduct inspections. Engage proactively and early. Provide complete, accurate applications. Maintain a single point of contact for each agency relationship.</p>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-label">Community</div>
+          <div class="equip-card-title">Local Stakeholders</div>
+          <p>Adjacent landowners, community groups, local government. Proactive engagement reduces delay risk. Address concerns early before they escalate into project obstacles.</p>
+        </div>
+      </div>
+
+      <h3>Communication Plan</h3>
+      <div class="cost-block">
+        <div class="cost-row"><span class="cost-label">Daily standup (construction phase)</span><span class="cost-val">Contractor site team</span></div>
+        <div class="cost-row"><span class="cost-label">Weekly project meeting</span><span class="cost-val">Full project team + key contractors</span></div>
+        <div class="cost-row"><span class="cost-label">Weekly progress report</span><span class="cost-val">All stakeholders</span></div>
+        <div class="cost-row"><span class="cost-label">Monthly executive update</span><span class="cost-val">Sponsor / leadership</span></div>
+        <div class="cost-row"><span class="cost-label">Issue escalation</span><span class="cost-val">Within 24 hours of identification</span></div>
+        <div class="cost-row"><span class="cost-label">Change order notification</span><span class="cost-val">Before work begins</span></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function toggleNav() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+function closeNav() {
+  document.querySelector('.sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+// Close nav when a nav item is clicked on mobile
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth <= 768) closeNav();
+  });
+});
+
+</script>
+</body>
+</html>

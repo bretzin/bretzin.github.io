@@ -662,9 +662,65 @@
     .comp-grid { grid-template-columns: 1fr; }
     .revenue-grid { grid-template-columns: 1fr; }
   }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hamburger-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .hamburger-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hamburger-btn span { display: block; width: 18px; height: 2px; background: var(--accent); border-radius: 1px; }
+  .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 98; }
+  .nav-overlay.open { display: block; }
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .sidebar { position: fixed; top: 0; left: -280px; z-index: 99; height: 100vh; transition: left 0.25s ease; }
+    .sidebar.open { left: 0; }
+    .main { padding: 72px 20px 32px; margin-left: 0; }
+    .section-title { font-size: 32px; }
+    .revenue-grid { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; align-items: stretch; }
+    .flow-arrow { transform: rotate(90deg); text-align: center; }
+    .risk-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .cost-row { flex-direction: column; gap: 2px; }
+    .cost-val { font-size: 11px; }
+  }
+
 </style>
 </head>
 <body>
+  <div class="nav-overlay" id="overlay" onclick="closeNav()"></div>
+  <div class="hamburger">
+    <span class="hamburger-title">CapturePoint Reference</span>
+    <button class="hamburger-btn" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 <div class="shell">
 
   <!-- SIDEBAR -->
@@ -1288,6 +1344,21 @@
     body.classList.toggle('hidden');
     toggle.classList.toggle('open');
   }
+
+function toggleNav() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+function closeNav() {
+  document.querySelector('.sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth <= 768) closeNav();
+  });
+});
+
 </script>
 </body>
 </html>

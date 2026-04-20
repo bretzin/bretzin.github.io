@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///Users/bretz/Downloads/bkv_reference_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BKV Corporation &amp; dCarbon Ventures</title>
+<link href="./BKV Corporation &amp; dCarbon Ventures_files/css2" rel="stylesheet">
+<style>
+:root {
+  --teal-900:#01333C;--teal-800:#024652;--teal-700:#035668;
+  --green-700:#00B49D;--green-300:#39D3B1;--green-100:#C5EAE6;
+  --green-gray:#355C63;--blue-500:#0385B4;--blue-400:#00ADEE;
+  --slate-700:#4B5F62;--slate-500:#829B9F;--slate-400:#9AAEB2;
+  --slate-300:#B4C3C5;--white:#ffffff;
+  --border:rgba(255,255,255,0.08);--border-teal:rgba(0,180,157,0.2);
+  --accent-glow:rgba(0,180,157,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--teal-900);color:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(1,51,60,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem;}
+.nav-logo{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);white-space:nowrap;}
+.nav-logo span{color:var(--green-700);}
+.nav-links{display:flex;gap:0.2rem;flex-wrap:wrap;}
+.nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.7rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:0.3rem 0.55rem;border-radius:4px;transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
+
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;padding:5rem 2rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 72% 40%,rgba(0,180,157,0.1) 0%,transparent 65%),radial-gradient(ellipse 50% 65% at 10% 88%,rgba(3,133,180,0.06) 0%,transparent 58%),linear-gradient(158deg,#01333C 0%,#024652 52%,#01333C 100%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,180,157,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,157,0.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 62% 38%,black 18%,transparent 72%);}
+.hero-content{position:relative;max-width:1200px;margin:0 auto;width:100%;}
+
+.eyebrow{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-700);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.7rem;font-style:italic;}
+.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--green-700);flex-shrink:0;}
+
+.hero h1{font-size:clamp(2.6rem,6.5vw,5.2rem);font-weight:600;line-height:1.02;letter-spacing:-0.025em;margin-bottom:1.6rem;max-width:740px;}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--green-300);}
+.hero-sub{font-size:0.97rem;color:var(--slate-400);max-width:520px;margin-bottom:2.8rem;line-height:1.75;font-weight:300;}
+.hero-stats{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--border-teal);border-radius:10px;overflow:hidden;max-width:680px;}
+.hero-stat{flex:1;min-width:110px;padding:1.2rem 1.4rem;border-right:1px solid var(--border-teal);background:rgba(0,180,157,0.05);}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-size:1.5rem;font-weight:600;color:var(--white);line-height:1;margin-bottom:0.28rem;}
+.hero-stat-label{font-size:0.6rem;color:var(--slate-500);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;}
+
+section{padding:5rem 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-label{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-700);margin-bottom:0.55rem;display:flex;align-items:center;gap:0.55rem;font-style:italic;}
+.section-label::before{content:'';display:block;width:18px;height:1px;background:var(--green-700);flex-shrink:0;}
+.section-title{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:600;letter-spacing:-0.022em;margin-bottom:0.7rem;line-height:1.1;}
+.section-desc{color:var(--slate-400);max-width:580px;margin-bottom:2.4rem;font-weight:300;line-height:1.75;font-size:0.93rem;}
+.alt-bg{background:var(--teal-800);}
+
+.status-badge{font-size:0.57rem;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;padding:0.26rem 0.6rem;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.status-operational{background:rgba(0,180,157,0.14);color:var(--green-300);border:1px solid rgba(0,180,157,0.3);}
+.status-execution{background:rgba(0,173,238,0.11);color:var(--blue-400);border:1px solid rgba(0,173,238,0.28);}
+.status-development{background:rgba(53,92,99,0.45);color:var(--slate-300);border:1px solid rgba(154,174,178,0.22);}
+.status-projected{background:rgba(53,92,99,0.18);color:var(--slate-500);border:1px dashed rgba(154,174,178,0.18);}
+
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--border-teal);border:1px solid var(--border-teal);border-radius:12px;overflow:hidden;}
+.biz-card{background:var(--teal-800);padding:1.9rem;transition:background 0.3s;}
+.biz-card:hover{background:var(--green-gray);}
+.biz-num{font-size:2.2rem;font-weight:600;color:var(--green-700);opacity:0.22;line-height:1;margin-bottom:0.9rem;}
+.biz-title{font-size:0.97rem;font-weight:600;margin-bottom:0.7rem;color:var(--white);letter-spacing:-0.01em;}
+.biz-desc{font-size:0.8rem;color:var(--slate-400);line-height:1.65;margin-bottom:0.9rem;font-weight:300;}
+.biz-tag{display:inline-block;font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:3px;background:var(--accent-glow);color:var(--green-300);border:1px solid var(--border-teal);}
+
+.loop-diagram{display:grid;grid-template-columns:repeat(auto-fit,minmax(152px,1fr));gap:0;background:var(--border-teal);border:1px solid var(--border-teal);border-radius:12px;overflow:hidden;margin-top:1.8rem;}
+.loop-step{background:var(--teal-800);padding:1.5rem 1rem;position:relative;text-align:center;transition:background 0.3s;}
+.loop-step:hover{background:var(--green-gray);}
+.loop-arrow{position:absolute;right:-9px;top:50%;transform:translateY(-50%);width:18px;height:18px;background:var(--teal-800);display:flex;align-items:center;justify-content:center;z-index:2;font-size:0.72rem;color:var(--green-700);}
+.loop-step:last-child .loop-arrow{display:none;}
+.loop-icon{font-size:1.5rem;margin-bottom:0.6rem;}
+.loop-title{font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;}
+.loop-detail{font-size:0.66rem;color:var(--slate-400);line-height:1.5;font-weight:300;}
+
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;}
+.project-card{background:var(--green-gray);border:1px solid var(--border-teal);border-radius:10px;overflow:hidden;transition:transform 0.22s,border-color 0.22s;}
+.project-card:hover{transform:translateY(-3px);border-color:var(--green-700);}
+.project-header{padding:1.1rem 1.35rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:0.9rem;}
+.project-name{font-size:0.97rem;font-weight:600;letter-spacing:-0.01em;}
+.project-location{font-size:0.62rem;color:var(--slate-500);text-transform:uppercase;letter-spacing:0.07em;margin-top:0.18rem;font-weight:500;}
+.project-body{padding:1.1rem 1.35rem;}
+.project-meta{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.9rem;}
+.meta-label{font-size:0.57rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-500);margin-bottom:0.1rem;}
+.meta-value{font-size:0.78rem;color:var(--slate-300);font-weight:500;}
+.project-desc{font-size:0.78rem;color:var(--slate-400);line-height:1.6;border-top:1px solid var(--border);padding-top:0.85rem;font-weight:300;}
+.projected-note{font-size:0.68rem;color:var(--slate-500);font-style:italic;margin-top:0.45rem;padding-top:0.45rem;border-top:1px dashed rgba(154,174,178,0.18);}
+
+.section-divider{display:flex;align-items:center;gap:0.9rem;margin:2.4rem 0 1.4rem;}
+.section-divider-line{flex:1;height:1px;background:var(--border);}
+.section-divider-text{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-500);white-space:nowrap;}
+.section-divider-text.confirmed{color:var(--green-700);padding:0.22rem 0.65rem;border:1px solid rgba(0,180,157,0.28);border-radius:20px;}
+.section-divider-text.projected{padding:0.22rem 0.65rem;border:1px dashed rgba(154,174,178,0.22);border-radius:20px;}
+
+.roadmap-wrap{overflow-x:auto;padding-bottom:0.9rem;}
+.roadmap{min-width:820px;position:relative;padding:0 0 2.2rem;}
+.roadmap-years{display:flex;margin-bottom:1.2rem;border-bottom:1px solid var(--border);padding-bottom:0.6rem;}
+.roadmap-year{flex:1;text-align:center;font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.07em;color:var(--slate-500);}
+.roadmap-year.now{color:var(--green-700);font-weight:500;}
+.roadmap-year.now::after{content:'▼';display:block;font-size:0.42rem;color:var(--green-700);margin-top:0.08rem;}
+.roadmap-tracks{display:flex;flex-direction:column;gap:1rem;}
+.roadmap-track{display:flex;align-items:center;gap:0.7rem;}
+.track-label{width:140px;flex-shrink:0;font-size:0.64rem;font-weight:500;color:var(--slate-400);text-align:right;line-height:1.3;}
+.track-bar-wrap{flex:1;position:relative;height:28px;}
+.track-bg{position:absolute;inset:0;background:rgba(255,255,255,0.02);border-radius:4px;}
+.track-bar{position:absolute;height:100%;border-radius:4px;display:flex;align-items:center;padding:0 0.6rem;font-size:0.58rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;overflow:hidden;}
+.track-bar.operational{background:rgba(0,180,157,0.16);border:1px solid rgba(0,180,157,0.32);color:var(--green-300);}
+.track-bar.execution{background:rgba(0,173,238,0.11);border:1px solid rgba(0,173,238,0.28);color:var(--blue-400);}
+.track-bar.development{background:rgba(53,92,99,0.5);border:1px solid rgba(154,174,178,0.22);color:var(--slate-300);}
+.track-bar.projected{background:rgba(53,92,99,0.18);border:1px dashed rgba(154,174,178,0.18);color:var(--slate-500);}
+.milestone{position:absolute;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;border:2px solid var(--teal-900);z-index:2;}
+.milestone.teal{background:var(--green-700);}
+.milestone.blue{background:var(--blue-400);}
+.milestone.slate{background:var(--slate-500);}
+.milestone-label{position:absolute;top:calc(100% + 3px);left:50%;transform:translateX(-50%);font-size:0.5rem;color:var(--slate-500);white-space:nowrap;}
+.roadmap-legend{display:flex;gap:1.4rem;margin-top:1.8rem;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:0.38rem;font-size:0.65rem;color:var(--slate-500);}
+.legend-dot{width:9px;height:9px;border-radius:2px;}
+
+.jv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1rem;}
+.jv-card{background:var(--green-gray);border:1px solid var(--border-teal);border-radius:10px;padding:1.5rem;transition:border-color 0.22s;}
+.jv-card:hover{border-color:var(--green-700);}
+.jv-name{font-size:0.92rem;font-weight:600;margin-bottom:0.3rem;letter-spacing:-0.01em;}
+.jv-partners{font-size:0.7rem;color:var(--green-300);margin-bottom:0.9rem;font-weight:400;font-style:italic;}
+.jv-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.76rem;gap:0.4rem;}
+.jv-row:last-child{border-bottom:none;}
+.jv-key{color:var(--slate-500);flex-shrink:0;}
+.jv-val{color:var(--slate-300);font-weight:500;text-align:right;}
+
+.revenue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--border-teal);border:1px solid var(--border-teal);border-radius:10px;overflow:hidden;margin-bottom:2.2rem;}
+.rev-card{background:var(--teal-800);padding:1.5rem;}
+.rev-icon{font-size:1.3rem;margin-bottom:0.6rem;}
+.rev-title{font-size:0.88rem;font-weight:600;margin-bottom:0.45rem;letter-spacing:-0.01em;}
+.rev-desc{font-size:0.75rem;color:var(--slate-400);line-height:1.6;font-weight:300;}
+.rev-highlight{display:inline-block;margin-top:0.65rem;font-family:'DM Mono',monospace;font-size:0.67rem;color:var(--green-300);background:var(--accent-glow);padding:0.2rem 0.5rem;border-radius:4px;border:1px solid var(--border-teal);}
+
+.work-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1.1rem;}
+.work-phase{background:var(--green-gray);border:1px solid var(--border-teal);border-radius:10px;overflow:hidden;}
+.work-phase-header{background:rgba(0,180,157,0.09);padding:0.85rem 1.1rem;border-bottom:1px solid var(--border-teal);display:flex;align-items:center;gap:0.6rem;}
+.work-phase-num{font-size:1.3rem;font-weight:600;color:var(--green-700);opacity:0.45;line-height:1;}
+.work-phase-title{font-size:0.85rem;font-weight:600;letter-spacing:-0.01em;}
+.work-phase-body{padding:1rem 1.1rem;}
+.work-item{display:flex;gap:0.5rem;margin-bottom:0.5rem;font-size:0.76rem;color:var(--slate-300);line-height:1.55;font-weight:300;}
+.work-item::before{content:'→';color:var(--green-700);flex-shrink:0;font-size:0.7rem;margin-top:0.07rem;}
+
+.assumed-note{background:rgba(0,173,238,0.07);border:1px solid rgba(0,173,238,0.18);border-radius:8px;padding:0.9rem 1.1rem;margin-bottom:1.4rem;font-size:0.78rem;color:var(--slate-300);line-height:1.65;}
+.assumed-note strong{color:var(--blue-400);}
+
+footer{background:var(--teal-800);border-top:1px solid var(--border);padding:1.25rem 2rem;text-align:center;}
+footer p{font-size:0.67rem;color:var(--slate-700);font-family:'DM Mono',monospace;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  section{padding:3.2rem 1.2rem;}
+  .hero{padding:2.8rem 1.2rem;min-height:auto;}
+  .hero-stats{max-width:100%;}
+  .hero-stat{min-width:95px;padding:0.9rem;}
+  .track-label{width:88px;font-size:0.58rem;}
+  .roadmap{min-width:600px;}
+  .loop-diagram{grid-template-columns:1fr 1fr;}
+  .loop-step:nth-child(2) .loop-arrow,.loop-step:nth-child(4) .loop-arrow{display:none;}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.hero-content>*{animation:fadeUp 0.6s ease both;}
+.eyebrow{animation-delay:0.08s;}
+.hero h1{animation-delay:0.18s;}
+.hero-sub{animation-delay:0.3s;}
+.hero-stats{animation-delay:0.42s;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">BKV <span>/</span> dCarbon Ventures</div>
+    <div class="nav-links">
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#overview">Overview</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#business">Business Lines</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#projects">Projects</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#roadmap">Roadmap</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#jv">Joint Ventures</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#revenue">Revenue</a>
+      <a href="file:///Users/bretz/Downloads/bkv_reference_1.html#phases">Project Phases</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="overview">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="eyebrow">BKV Corporation · NYSE: BKV · dCarbon Ventures</div>
+    <h1>Owning Our Carbon.<br><em>Delivering the Future.</em></h1>
+    <p class="hero-sub">BKV Corporation operates a vertically integrated closed-loop energy platform — connecting natural gas production, midstream infrastructure, power generation, and carbon capture to deliver reliable, low-carbon energy solutions at scale.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">Top 20</div><div class="hero-stat-label">US Gas Producer</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$894M</div><div class="hero-stat-label">TTM Revenue</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">19 Mtpy</div><div class="hero-stat-label">CCUS Target 2030s</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$85/ton</div><div class="hero-stat-label">45Q Tax Credit</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$1.6B</div><div class="hero-stat-label">CCUS Invest. 2030</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="business" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Corporate Structure</div>
+    <h2 class="section-title">Four Business Lines. One Closed Loop.</h2>
+    <p class="section-desc">BKV operates four integrated business lines connecting natural gas production through to carbon-neutral energy delivery. Parent company Banpu North America Corporation (Bangkok-based, SET-listed) holds 67.65% of BKV as of January 2026. BKV HQ: Denver, CO.</p>
+    <div class="biz-grid">
+      <div class="biz-card"><div class="biz-num">01</div><div class="biz-title">Natural Gas Production</div><div class="biz-desc">Operated through BKV Upstream Midstream, LLC. Largest Barnett Shale operator with ~563,000 net acres and 835.5 MMcfe/day net production. Key acquisitions: Devon Barnett, Exxon Barnett, Bedrock Production (BKV Barnett II, 96,000 acres, ~1 Tcfe reserves, closed Sept 2025).</div><span class="biz-tag">Barnett Shale · NE Pennsylvania</span></div>
+      <div class="biz-card"><div class="biz-num">02</div><div class="biz-title">Natural Gas Midstream</div><div class="biz-desc">Gathering, compression, processing, and transportation supporting upstream production. Partnership with EnLink Midstream — EnLink processing plants are the CO₂ source for Barnett Zero capture. Operated under BKV Upstream Midstream, LLC.</div><span class="biz-tag">North Texas Infrastructure</span></div>
+      <div class="biz-card"><div class="biz-num">03</div><div class="biz-title">Power Generation</div><div class="biz-desc">BKV-BPP Power JV owns Temple I and Temple II combined-cycle gas-fired plants in Temple, TX (Bell County). 2,246 GWh generated in 2025. BKV increased ownership to 75% in January 2026. Positioned for ERCOT load growth from AI and data center demand.</div><span class="biz-tag">Temple, TX · ERCOT · 75% BKV</span></div>
+      <div class="biz-card"><div class="biz-num">04</div><div class="biz-title">CCUS — dCarbon Ventures</div><div class="biz-desc">Wholly-owned subsidiary driving all CCUS development and operations. Barnett Zero operational. Eagle Ford and Cotton Cove in execution. BKVerde early-stage assets. Funded through BKV-CIP Joint Venture with Copenhagen Infrastructure Partners ($500M committed).</div><span class="biz-tag">TX · LA · Target: 19 Mtpy CO₂</span></div>
+    </div>
+
+    <div style="margin-top:2.8rem;">
+      <div class="section-label">The Closed-Loop Model</div>
+      <p class="section-desc" style="margin-bottom:0;">BKV's differentiated strategy connects every step of the energy and carbon value chain — no purchasing offsets, no outsourcing the emissions problem.</p>
+    </div>
+    <div class="loop-diagram">
+      <div class="loop-step"><div class="loop-arrow">→</div><div class="loop-icon">⛽</div><div class="loop-title">Produce Gas</div><div class="loop-detail">Barnett Shale &amp; NE Pennsylvania natural gas production at scale</div></div>
+      <div class="loop-step"><div class="loop-arrow">→</div><div class="loop-icon">🏭</div><div class="loop-title">Capture CO₂</div><div class="loop-detail">Capture CO₂ waste from gas processing plants before emission</div></div>
+      <div class="loop-step"><div class="loop-arrow">→</div><div class="loop-icon">🔩</div><div class="loop-title">Compress &amp; Transport</div><div class="loop-detail">Compress, dehydrate, and pipeline CO₂ to injection sites</div></div>
+      <div class="loop-step"><div class="loop-arrow">→</div><div class="loop-icon">🌍</div><div class="loop-title">Sequester Permanently</div><div class="loop-detail">Inject into Class II or Class VI saline formations for permanent storage</div></div>
+      <div class="loop-step"><div class="loop-icon">💰</div><div class="loop-title">Monetize</div><div class="loop-detail">Collect $85/ton 45Q credits + sell Carbon Sequestered Gas (CSG) product</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Project Portfolio</div>
+    <h2 class="section-title">Known &amp; Projected Projects</h2>
+    <p class="section-desc">Confirmed projects sourced from BKV public filings, SEC disclosures, and press releases. Projected projects are informed analysis based on stated strategy, JV capital commitments, and basin opportunity — not announced by BKV.</p>
+
+    <div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-text confirmed">✓ Confirmed Projects</div><div class="section-divider-line"></div></div>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Barnett Zero</div><div class="project-location">Bridgeport, TX · Wise County · Barnett Shale</div></div><span class="status-badge status-operational">Operational</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">First Injection</div><div class="meta-value">Nov 2023</div></div><div><div class="meta-label">Well Type</div><div class="meta-value">Class II</div></div><div><div class="meta-label">Annual Rate</div><div class="meta-value">~183,000 MT CO₂e</div></div><div><div class="meta-label">JV</div><div class="meta-value">BKV-CIP (51/49)</div></div></div><div class="project-desc">First commercial CCUS project. CO₂ sourced from EnLink Midstream gas processing. Class II injection well. Inside BKV-CIP JV. Life-to-date sequestration: 173,325 MT CO₂e through Dec 2024. Partner: EnLink Midstream.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Eagle Ford</div><div class="project-location">Freer, TX · Duval County</div></div><span class="status-badge status-execution">In Execution</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">FID</div><div class="meta-value">Dec 2024</div></div><div><div class="meta-label">Well Type</div><div class="meta-value">Class II</div></div><div><div class="meta-label">Annual Rate</div><div class="meta-value">~90,000 MT CO₂e</div></div><div><div class="meta-label">Target Start</div><div class="meta-value">H1 2026</div></div></div><div class="project-desc">Partnership with major midstream operator (undisclosed). BKV purchases CO₂ waste stream from existing gas processing plant, compresses, and sequesters via adjacent injection well. TX Railroad Commission Class II approved. Inside BKV-CIP JV.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Cotton Cove</div><div class="project-location">Barnett Shale · North Texas</div></div><span class="status-badge status-execution">In Execution</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">FID</div><div class="meta-value">2024</div></div><div><div class="meta-label">Well Type</div><div class="meta-value">Class II</div></div><div><div class="meta-label">Peak Rate</div><div class="meta-value">42,000 MT CO₂e/yr</div></div><div><div class="meta-label">JV</div><div class="meta-value">BKV-BPP (51/49)</div></div></div><div class="project-desc">Joint venture with Banpu Power US (BPPUS). Initial sequestration targeted H1 2026. Barnett Shale basin near existing BKV upstream operations. BKV operates all JV CCUS assets.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Comstock / Haynesville</div><div class="project-location">Bethel &amp; Marquez · Western Haynesville · East Texas</div></div><span class="status-badge status-development">Early Development</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">Announced</div><div class="meta-value">Apr 2025</div></div><div><div class="meta-label">Agreement</div><div class="meta-value">Non-binding</div></div><div><div class="meta-label">Partner</div><div class="meta-value">Comstock Resources</div></div><div><div class="meta-label">FID</div><div class="meta-value">TBD</div></div></div><div class="project-desc">Two Comstock natural gas processing facilities — Bethel and Marquez. CCUS injection wells to permanently sequester CO₂ waste. Subject to definitive agreements. Haynesville basin provides direct access to Gulf Coast and LNG markets.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">BKVerde — Whites Bayou</div><div class="project-location">Liberty County, TX</div></div><span class="status-badge status-development">EPA Permitting</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">Well Type</div><div class="meta-value">Class VI (EPA)</div></div><div><div class="meta-label">Well Name</div><div class="meta-value">Luz Solar No. 1</div></div><div><div class="meta-label">Design Rate</div><div class="meta-value">0.5 MMT/yr</div></div><div><div class="meta-label">Life Target</div><div class="meta-value">&gt;6.0 MMT total</div></div></div><div class="project-desc">BKVerde asset (originated from Verde CO2 transfer). Class VI permit application filed with EPA. Targeting industrial emitters within 50-mile radius. Awaiting permit approval and commercial agreements before FID.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">BKVerde — Donaldsonville</div><div class="project-location">Donaldsonville, Ascension Parish, LA</div></div><span class="status-badge status-development">Early Development</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">Asset Origin</div><div class="meta-value">Verde CO2 Transfer</div></div><div><div class="meta-label">Rights</div><div class="meta-value">Pore space leases</div></div><div><div class="meta-label">Target</div><div class="meta-value">Industrial corridor</div></div><div><div class="meta-label">FID</div><div class="meta-value">TBD — 2027+</div></div></div><div class="project-desc">Industrial CCUS hub in the Donaldsonville chemical corridor (Mosaic, CF Industries, Borden). Pore space leases secured via BKVerde. No permit filed. Awaiting commercial emitter agreements. Louisiana Class VI regulatory framework still maturing.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Louisiana — NuQuest Agreement</div><div class="project-location">Louisiana · State Sequestration Agreement</div></div><span class="status-badge status-development">Agreement Only</span></div>
+        <div class="project-body"><div class="project-meta"><div><div class="meta-label">Partner</div><div class="meta-value">NuQuest Energy</div></div><div><div class="meta-label">Announced</div><div class="meta-value">Aug 2023</div></div><div><div class="meta-label">Status</div><div class="meta-value">Agreement in place</div></div><div><div class="meta-label">Scope</div><div class="meta-value">Not yet defined</div></div></div><div class="project-desc">Carbon sequestration agreement with the State of Louisiana and NuQuest Energy. Establishes BKV's Louisiana development rights and intent. No specific project scope, location, or capital amount announced. Predevelopment stage only.</div></div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin-top:2.8rem;"><div class="section-divider-line"></div><div class="section-divider-text projected">⬡ Projected — Informed Analysis Only · Not Announced by BKV</div><div class="section-divider-line"></div></div>
+    <p style="font-size:0.76rem;color:var(--slate-500);margin-bottom:1.4rem;font-style:italic;">The following projects are not announced. They are informed projections based on BKV's stated $1.3–1.6B CCUS investment plan through 2030, the 19 Mtpy CO₂ target, the BKV-CIP JV's $500M committed capital, and known basin strategy.</p>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Barnett Expansion — Phase 2</div><div class="project-location">North Texas · Barnett Shale</div></div><span class="status-badge status-projected">Projected 2026–2027</span></div>
+        <div class="project-body"><div class="project-desc">BKV's Bedrock acquisition (BKV Barnett II, 96,000 acres, 1,121 producing locations) likely generates additional CO₂ capture opportunities at new processing points. Additional Class II injection wells expected as BKV integrates Bedrock assets and applies its CCUS playbook.</div><div class="projected-note">Basis: Bedrock acquisition closed Sept 2025. BKV stated playbook replication strategy in earnings commentary.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Haynesville — Additional Sites</div><div class="project-location">East Texas / NW Louisiana</div></div><span class="status-badge status-projected">Projected 2027–2028</span></div>
+        <div class="project-body"><div class="project-desc">The Comstock agreement references "other locations" beyond Bethel and Marquez. Haynesville has multiple large processing facilities — additional third-party CCUS development agreements likely as BKV proves the model at initial sites. Proximity to Gulf Coast LNG markets increases carbon-neutral gas product value.</div><div class="projected-note">Basis: Comstock agreement language; BKV stated intent to enable other gas producers to use low-carbon infrastructure.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Class VI Scale-Up — Texas</div><div class="project-location">Texas · Multiple Basins</div></div><span class="status-badge status-projected">Projected 2027–2029</span></div>
+        <div class="project-body"><div class="project-desc">Near-term projects are Class II. Achieving 19 Mtpy requires Class VI saline formation wells at much larger volumes. Whites Bayou (Liberty County) is the first Class VI attempt. Additional Class VI development expected in Texas as EPA permitting matures.</div><div class="projected-note">Basis: 19 Mtpy target requires Class VI scale. BKV filings reference "Class II and Class VI projects" as the growth path.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Louisiana Industrial Hub</div><div class="project-location">Donaldsonville / Central Louisiana</div></div><span class="status-badge status-projected">Projected 2028–2030</span></div>
+        <div class="project-body"><div class="project-desc">BKVerde pore space assets at Donaldsonville target one of the densest industrial CO₂ source clusters in the US. Commercial agreements with anchor emitters would trigger project development. Louisiana regulatory framework (state Class VI primacy) is the primary gating item.</div><div class="projected-note">Basis: Pore space secured; NuQuest state agreement in place; regulatory timeline gates execution.</div></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header"><div><div class="project-name">Third-Party CCUS Expansion</div><div class="project-location">Multiple US Basins</div></div><span class="status-badge status-projected">Projected 2027–2032</span></div>
+        <div class="project-body"><div class="project-desc">BKV's stated ambition is to become a CCUS infrastructure provider for third-party gas producers. Comstock is the first third-party customer. Additional deals expected across Haynesville, Permian, or Appalachia as the BKV-CIP JV deploys its $500M capital commitment. BKV operates all JV assets as program operator.</div><div class="projected-note">Basis: BKV-CIP JV designed expressly for third-party CCUS projects; $500M commitment must be deployed.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Timeline</div>
+    <h2 class="section-title">Project Roadmap 2023–2032</h2>
+    <p class="section-desc">Confirmed milestones shown with solid bars. Projected activity shown with dashed bars. All future dates subject to permitting, commercial agreements, and JV capital deployment decisions.</p>
+    <div class="roadmap-wrap">
+      <div class="roadmap">
+        <div class="roadmap-years">
+          <div class="roadmap-year">2023</div><div class="roadmap-year">2024</div><div class="roadmap-year">2025</div><div class="roadmap-year now">2026</div><div class="roadmap-year">2027</div><div class="roadmap-year">2028</div><div class="roadmap-year">2029</div><div class="roadmap-year">2030</div><div class="roadmap-year">2031</div><div class="roadmap-year">2032</div>
+        </div>
+        <div class="roadmap-tracks">
+          <div class="roadmap-track"><div class="track-label">Barnett Zero<br>Bridgeport, TX</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar operational" style="left:0%;width:100%;">Operational — Ongoing</div><div class="milestone teal" style="left:0%"><div class="milestone-label">Nov'23 Online</div></div></div></div>
+          <div class="roadmap-track"><div class="track-label">Eagle Ford<br>Freer, TX</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar execution" style="left:20%;width:80%;">Execution → Operations</div><div class="milestone blue" style="left:20%"><div class="milestone-label">FID Dec'24</div></div><div class="milestone teal" style="left:30%"><div class="milestone-label">H1'26 Start</div></div></div></div>
+          <div class="roadmap-track"><div class="track-label">Cotton Cove<br>Barnett, TX</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar execution" style="left:20%;width:80%;">Execution → Operations</div><div class="milestone blue" style="left:20%"><div class="milestone-label">FID 2024</div></div><div class="milestone teal" style="left:30%"><div class="milestone-label">H1'26 Start</div></div></div></div>
+          <div class="roadmap-track"><div class="track-label">Comstock /<br>Haynesville, TX</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar development" style="left:30%;width:30%;">Dev / FID</div><div class="track-bar projected" style="left:60%;width:40%;">Operations</div><div class="milestone slate" style="left:30%"><div class="milestone-label">Agreement Apr'25</div></div></div></div>
+          <div class="roadmap-track"><div class="track-label">Whites Bayou<br>Liberty Co., TX</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar development" style="left:30%;width:20%;">Permitting</div><div class="track-bar projected" style="left:50%;width:50%;">FID → Operations</div></div></div>
+          <div class="roadmap-track"><div class="track-label">Barnett Phase 2<br>Bedrock Assets</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar projected" style="left:30%;width:30%;">Dev / FID</div><div class="track-bar projected" style="left:60%;width:40%;">Operations</div></div></div>
+          <div class="roadmap-track"><div class="track-label">Louisiana Hub<br>Donaldsonville</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar projected" style="left:30%;width:40%;">Regulatory / Dev</div><div class="track-bar projected" style="left:70%;width:30%;">FID+</div></div></div>
+          <div class="roadmap-track"><div class="track-label">3rd-Party CCUS<br>CIP JV Deployment</div><div class="track-bar-wrap"><div class="track-bg"></div><div class="track-bar projected" style="left:40%;width:60%;">Multiple Projects — CIP JV Capital Deployment</div></div></div>
+        </div>
+        <div class="roadmap-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--green-700);"></div>Operational (Confirmed)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--blue-400);"></div>In Execution (Confirmed)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--slate-700);"></div>In Development (Confirmed)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--slate-700);opacity:0.4;border:1px dashed var(--slate-500);"></div>Projected (Not Announced)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jv">
+  <div class="section-inner">
+    <div class="section-label">Corporate Structure</div>
+    <h2 class="section-title">Joint Ventures &amp; Subsidiaries</h2>
+    <p class="section-desc">BKV uses JV structures to access outside capital while maintaining operational control. BKV serves as operator of all CCUS assets regardless of ownership split.</p>
+    <div class="jv-grid">
+      <div class="jv-card"><div class="jv-name">BKV-CIP Joint Venture</div><div class="jv-partners">BKV dCarbon Ventures + Copenhagen Infrastructure Partners (C Squared Solutions)</div><div class="jv-row"><span class="jv-key">Entity</span><span class="jv-val">BKV dCarbon Project, LLC</span></div><div class="jv-row"><span class="jv-key">Formed</span><span class="jv-val">May 8, 2025</span></div><div class="jv-row"><span class="jv-key">BKV Interest</span><span class="jv-val">51%</span></div><div class="jv-row"><span class="jv-key">CIP Commitment</span><span class="jv-val">Up to $500M (expandable $1B)</span></div><div class="jv-row"><span class="jv-key">Assets</span><span class="jv-val">Barnett Zero + Eagle Ford + future</span></div><div class="jv-row"><span class="jv-key">Operator</span><span class="jv-val">BKV (all JV CCUS projects)</span></div></div>
+
+      <div class="jv-card"><div class="jv-name">BKV-BPP Cotton Cove JV</div><div class="jv-partners">BKV dCarbon Ventures + Banpu Power US (BPPUS)</div><div class="jv-row"><span class="jv-key">Entity</span><span class="jv-val">BKV-BPP Cotton Cove, LLC</span></div><div class="jv-row"><span class="jv-key">BKV Interest</span><span class="jv-val">51%</span></div><div class="jv-row"><span class="jv-key">BPPUS Interest</span><span class="jv-val">49%</span></div><div class="jv-row"><span class="jv-key">Asset</span><span class="jv-val">Cotton Cove CCS, Barnett TX</span></div><div class="jv-row"><span class="jv-key">Status</span><span class="jv-val">FID reached, H1 2026 target start</span></div></div>
+
+      <div class="jv-card"><div class="jv-name">BKV-BPP Power JV</div><div class="jv-partners">BKV Corporation + Banpu Power US (BPPUS)</div><div class="jv-row"><span class="jv-key">Entity</span><span class="jv-val">BKV-BPP Power, LLC</span></div><div class="jv-row"><span class="jv-key">BKV Interest</span><span class="jv-val">75% (as of Jan 30, 2026)</span></div><div class="jv-row"><span class="jv-key">BPPUS Interest</span><span class="jv-val">25%</span></div><div class="jv-row"><span class="jv-key">Assets</span><span class="jv-val">Temple I &amp; II, Temple TX (ERCOT)</span></div><div class="jv-row"><span class="jv-key">2025 Generation</span><span class="jv-val">2,246 GWh</span></div></div>
+
+      <div class="jv-card"><div class="jv-name">BKVerde, LLC</div><div class="jv-partners">Wholly owned by BKV dCarbon Ventures</div><div class="jv-row"><span class="jv-key">Origin</span><span class="jv-val">Verde CO2 partnership (Aug 2022)</span></div><div class="jv-row"><span class="jv-key">Asset Transfer</span><span class="jv-val">Nov 2023 — assets to BKVerde</span></div><div class="jv-row"><span class="jv-key">Verde Option</span><span class="jv-val">Up to 5% in transferred projects</span></div><div class="jv-row"><span class="jv-key">Holdings</span><span class="jv-val">Donaldsonville LA + Whites Bayou TX</span></div><div class="jv-row"><span class="jv-key">Status</span><span class="jv-val">Both assets pre-FID / permitting</span></div></div>
+
+      <div class="jv-card"><div class="jv-name">Parent: Banpu / BNAC</div><div class="jv-partners">Banpu North America Corporation — Majority Shareholder</div><div class="jv-row"><span class="jv-key">Banpu Ownership</span><span class="jv-val">67.65% of BKV (Jan 2026)</span></div><div class="jv-row"><span class="jv-key">Banpu HQ</span><span class="jv-val">Bangkok, Thailand (SET-listed)</span></div><div class="jv-row"><span class="jv-key">Strategy</span><span class="jv-val">"Energy Symphonics" — coal funding US gas transition</span></div><div class="jv-row"><span class="jv-key">BKV IPO</span><span class="jv-val">NYSE: BKV · Sept 26, 2024</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="revenue" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Business Model</div>
+    <h2 class="section-title">Revenue Model &amp; Commercial Strategy</h2>
+    <p class="section-desc">Five distinct revenue streams, all connected by the closed-loop strategy. The 45Q tax credit is the economic engine that makes CCUS profitable rather than a compliance cost.</p>
+    <div class="revenue-grid">
+      <div class="rev-card"><div class="rev-icon">⛽</div><div class="rev-title">Natural Gas Sales</div><div class="rev-desc">Core revenue from Barnett Shale and NE Pennsylvania gas production. Top 20 US producer. Hedged commodity exposure. $894M TTM revenue base provides stable cash flow to fund CCUS investment.</div><div class="rev-highlight">Primary Revenue Driver</div></div>
+      <div class="rev-card"><div class="rev-icon">💰</div><div class="rev-title">45Q Tax Credits</div><div class="rev-desc">Federal credit of $85/ton for CO₂ permanently sequestered in Class VI saline formations. $35/ton for Class II. Inflation Reduction Act extended and expanded the credit through 2033. Central to dCarbon project economics.</div><div class="rev-highlight">$85/ton · Class VI Wells</div></div>
+      <div class="rev-card"><div class="rev-icon">🍃</div><div class="rev-title">Carbon Sequestered Gas (CSG)</div><div class="rev-desc">Premium natural gas product with Scope 1, 2, and 3 carbon neutrality certification. Differentiated offering for industrial and utility customers seeking low-carbon energy without purchasing offsets.</div><div class="rev-highlight">Premium Product · Growing Demand</div></div>
+      <div class="rev-card"><div class="rev-icon">🏭</div><div class="rev-title">Third-Party CO₂ Sequestration</div><div class="rev-desc">BKV purchases CO₂ waste streams from third-party gas processors and sequesters for a fee. EnLink and Comstock are current/planned partners. Scales dCarbon revenue beyond BKV's own emissions footprint.</div><div class="rev-highlight">Comstock · EnLink · TBD</div></div>
+      <div class="rev-card"><div class="rev-icon">⚡</div><div class="rev-title">Power Generation</div><div class="rev-desc">Temple I and II combined-cycle plants serve ERCOT. 2,246 GWh generated in 2025. BKV increased ownership to 75% in January 2026. Positioned for AI/data center load growth driving Texas power demand.</div><div class="rev-highlight">2,246 GWh · ERCOT · 75% BKV</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="phases">
+  <div class="section-inner">
+    <div class="section-label">Engineering &amp; Project Management</div>
+    <h2 class="section-title">Project Phases &amp; Engineering Scope</h2>
+    <p class="section-desc">CCUS project delivery requires PE and PM capability across all phases of the capital project lifecycle — from early feasibility through commissioning and operations handover. The surface/subsurface interface is a defining coordination challenge at dCarbon.</p>
+
+    <div class="assumed-note">
+      <strong>Note on Select Phase Projects:</strong> Based on publicly available information, the Comstock/Haynesville facilities (Bethel and Marquez, East Texas) and the BKVerde Whites Bayou project (Liberty County, TX) are the most likely candidates for what BKV describes internally as projects currently in Select phase — given their announced non-binding agreement status and active EPA permitting activity respectively. This is an informed assumption only. BKV has not publicly confirmed which specific projects are designated Select at any given time.
+    </div>
+
+    <div class="work-section">
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">01</div><div class="work-phase-title">Pre-FEED / Select Phase</div></div><div class="work-phase-body"><div class="work-item">Review subsurface injection pressure and rate specifications — translate to surface facility design basis</div><div class="work-item">Develop preliminary PFDs and P&amp;IDs for compression, dehydration, and pipeline systems</div><div class="work-item">Support Class II or Class VI permit application — surface scope and MRV plan coordination</div><div class="work-item">Evaluate site constraints: access, utilities, lay-down area, pipeline routing, easements</div><div class="work-item">Develop preliminary capital cost estimate and project schedule (Class 4/5)</div><div class="work-item">Coordinate with environmental and regulatory consultants on permitting timeline</div><div class="work-item">Support FEL-1 deliverables for FID decision package</div></div></div>
+
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">02</div><div class="work-phase-title">FEED / Define Phase</div></div><div class="work-phase-body"><div class="work-item">Manage engineering firm through FEED deliverables — P&amp;IDs, equipment datasheets, line lists, C&amp;E diagrams</div><div class="work-item">Coordinate HAZOP/HAZID studies and action item closure</div><div class="work-item">Issue long-lead equipment RFPs: compression trains, dehydration units, wellhead systems, controls</div><div class="work-item">Evaluate vendor bids — technical compliance review against data sheet requirements</div><div class="work-item">Develop detailed cost estimate (Class 2/3) and project execution plan</div><div class="work-item">Establish project controls baseline: WBS, P6 schedule, risk register, change control</div><div class="work-item">Coordinate surface/subsurface interface — injection specification compliance verification</div><div class="work-item">Support FID package for BKV/CIP JV investment approval</div></div></div>
+
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">03</div><div class="work-phase-title">Procurement &amp; Fabrication</div></div><div class="work-phase-body"><div class="work-item">Issue purchase orders for long-lead equipment — track delivery milestones and expedite as needed</div><div class="work-item">Review and approve vendor data submittals: drawings, datasheets, QC plans, MCC checklists</div><div class="work-item">Conduct or coordinate factory acceptance tests (FAT) for compression and control packages</div><div class="work-item">Monitor fabrication schedule versus required delivery dates — flag critical path slippage</div><div class="work-item">Manage RFIs and technical queries between engineering and vendors</div><div class="work-item">Track change orders — evaluate cost and schedule impact, obtain approvals</div><div class="work-item">Coordinate transportation and logistics for oversized equipment to remote site locations</div></div></div>
+
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">04</div><div class="work-phase-title">Construction</div></div><div class="work-phase-body"><div class="work-item">Manage EPC contractor or construction manager — daily progress, look-ahead schedules</div><div class="work-item">Conduct field walks — verify construction compliance with drawings and specifications</div><div class="work-item">Manage punch list development and A/B categorization (pre-startup vs. post-startup)</div><div class="work-item">Coordinate inspection activities: welding NDE, pressure testing, instrument loop checks</div><div class="work-item">Track and manage construction RFIs and field change notices</div><div class="work-item">Interface with regulatory inspectors (Railroad Commission, EPA, state agencies)</div><div class="work-item">Maintain cost and schedule variance tracking — weekly project controls reports</div><div class="work-item">Enforce site safety requirements — BKV Zero Harm culture</div></div></div>
+
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">05</div><div class="work-phase-title">Commissioning &amp; Startup</div></div><div class="work-phase-body"><div class="work-item">Develop or review pre-commissioning and commissioning procedures for compression, dehydration, and injection systems</div><div class="work-item">Manage mechanical completion walkdowns and punch list A-item closure before first injection</div><div class="work-item">Maintain contractor accountability during commissioning — schedule pressure on punch list closeout</div><div class="work-item">Coordinate with subsurface team on injection ramp-up protocol and well monitoring requirements</div><div class="work-item">Support MRV plan implementation — regulatory compliance for 45Q credit eligibility</div><div class="work-item">Witness performance testing and document against design basis specifications</div><div class="work-item">Drive turnover package: as-builts, O&amp;M manuals, spare parts, warranties, training</div><div class="work-item">Formal handover to BKV operations team with complete documentation</div></div></div>
+
+      <div class="work-phase"><div class="work-phase-header"><div class="work-phase-num">06</div><div class="work-phase-title">Project Controls &amp; Reporting</div></div><div class="work-phase-body"><div class="work-item">Maintain project schedule in P6 or MS Project — update actuals, flag critical path changes</div><div class="work-item">Prepare weekly and monthly project status reports for BKV/dCarbon leadership and JV partners</div><div class="work-item">Track actual vs. budgeted cost — identify variances and develop corrective action plans</div><div class="work-item">Manage risk register — update probability/impact scores, assign mitigations, track actions</div><div class="work-item">Coordinate change control process — scope documentation, cost impact analysis, approval workflow</div><div class="work-item">Support 45Q credit documentation — ensure injection volumes and MRV records are maintained</div><div class="work-item">Coordinate across dCarbon project team daily cadence (8 AM MT team sync)</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>BKV Corporation (NYSE: BKV) · dCarbon Ventures · All confirmed project data sourced from public filings and press releases through April 2026 · Projected projects are informed analysis only and are not announced by BKV</p>
+</footer>
+
+
+
+</body></html>
